@@ -69,7 +69,7 @@ export class ShowIPDataView extends View {
         >
           Ip address
         </h3>
-        <p class="text-lg font-medium">${data.query}</p>
+        <p class="text-lg font-medium">${data.ip}</p>
       </div>
 
       <div class="lg:px-12">
@@ -87,7 +87,7 @@ export class ShowIPDataView extends View {
         >
           Timezone
         </h3>
-        <p class="text-lg font-medium">${data.timezone}</p>
+        <p class="text-lg font-medium">${data.timezone.id} ${data.timezone.utc}</p>
       </div>
 
       <div class="lg:px-12">
@@ -96,7 +96,7 @@ export class ShowIPDataView extends View {
         >
           ISP
         </h3>
-        <p class="text-lg font-medium">${data.isp}</p>
+        <p class="text-lg font-medium">${data.connection.isp}</p>
       </div>
     `;
   }

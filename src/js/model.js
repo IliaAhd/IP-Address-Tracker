@@ -24,10 +24,6 @@ export const getIPData = async url => {
       const IPData = await AJAX(`${url}${state.query}`);
       updateState(IPData, IPData);
     }
-
-    const { lat, lon } = state.IPData;
-    state.lat = lat;
-    state.lon = lon;
   } catch (error) {
     throw error;
   }

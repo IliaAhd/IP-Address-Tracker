@@ -19,7 +19,10 @@ const controlShowIPData = async query => {
 
     showIPDataView.render(model.state.IPData);
 
-    showMap.renderMap([model.state.lat, model.state.lon]);
+    showMap.renderMap([
+      model.state.IPData.latitude,
+      model.state.IPData.longitude,
+    ]);
 
     console.log(model.state);
   } catch (error) {
