@@ -1,5 +1,8 @@
-// import 'leaflet';
+import 'leaflet';
+import 'leaflet/dist/leaflet.js';
 import 'leaflet/dist/leaflet.css';
+
+import markerIcon from '../images/icon-marker2.png';
 
 class View {
   render(data) {
@@ -27,7 +30,7 @@ class View {
 
   renderError(message = this._message) {
     this._clear();
-    _parentEl.innerHTML = message;
+    this._parentEl.innerHTML = message;
   }
 
   _clear() {
@@ -60,6 +63,7 @@ export class SearchIPView extends View {
 
 export class ShowIPDataView extends View {
   _parentEl = document.querySelector('#ipInfo');
+  _message = 'Please enter correct IP address!';
 
   _genereateMarkup(data) {
     return `
@@ -104,20 +108,19 @@ export class ShowIPDataView extends View {
 
 export class ShowMap extends View {
   _parentEl = document.querySelector('#map');
-
-  map = L.map('map');
-
-  constructor() {
-    super();
-  }
+  _map = L.map('map');
+  _myIcon = L.icon({
+    iconUrl: markerIcon,
+    iconSize: [65, 65],
+  });
 
   renderMap(position) {
-    this.map.setView(position, 13);
+    this._map.setView(position, 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(this.map);
+    }).addTo(this._map);
 
-    L.marker(position).addTo(this.map).openPopup();
+    L.marker(position, { icon: this._myIcon }).addTo(this._map).openPopup();
   }
 }

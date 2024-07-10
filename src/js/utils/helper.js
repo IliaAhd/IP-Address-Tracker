@@ -1,5 +1,6 @@
 import { state } from '../model';
 
+// Fetch API method
 export const AJAX = async url => {
   try {
     const res = await fetch(url);
@@ -7,13 +8,13 @@ export const AJAX = async url => {
 
     if (!res.ok) throw new Error('Something went wrong!');
 
-    // if (data.status === 'fail') return;
     return data;
   } catch (error) {
     throw error;
   }
 };
 
+// Add data to state.IPData
 export const updateState = data => {
   state.IPData = data;
 };

@@ -7,9 +7,11 @@ export const state = {
 
 export const getUserIP = async url => {
   try {
+    // Get user IP
     const IP = await AJAX(url);
-    const { ip } = IP;
-    state.userIP = ip;
+
+    // Store user IP
+    state.userIP = IP.ip;
   } catch (error) {
     throw error;
   }
@@ -17,12 +19,13 @@ export const getUserIP = async url => {
 
 export const getIPData = async url => {
   try {
-    if (state.query === '') {
+    // Check if user puts an IP
+    if (state.query === undefined) {
       const IPData = await AJAX(`${url}${state.userIP}`);
-      updateState(IPData, IPData);
+      updateState(IPData);
     } else {
-      const IPData = await AJAX(`${url}${state.query}`);
-      updateState(IPData, IPData);
+      const IPData = await AJAX(`${url}${state.query.trim()}`);
+      updateState(IPData);
     }
   } catch (error) {
     throw error;
