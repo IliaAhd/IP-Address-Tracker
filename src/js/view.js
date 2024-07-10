@@ -2,7 +2,7 @@ import 'leaflet';
 import 'leaflet/dist/leaflet.js';
 import 'leaflet/dist/leaflet.css';
 
-import markerIcon from '../images/icon-marker2.png';
+import markerIcon from '../images/icon-marker.png';
 
 class View {
   render(data) {
@@ -63,11 +63,11 @@ export class SearchIPView extends View {
 
 export class ShowIPDataView extends View {
   _parentEl = document.querySelector('#ipInfo');
-  _message = 'Please enter correct IP address!';
+  _message = 'Please enter a valid IPv4 address!';
 
   _genereateMarkup(data) {
     return `
-      <div class="lg:px-12">
+      <div>
         <h3
           class="text-dark-gray text-[12px] uppercase font-medium tracking-wider"
         >
@@ -76,7 +76,7 @@ export class ShowIPDataView extends View {
         <p class="text-lg font-medium">${data.ip}</p>
       </div>
 
-      <div class="lg:px-12">
+      <div>
         <h3
           class="text-dark-gray text-[12px] uppercase font-medium tracking-wider"
         >
@@ -85,7 +85,7 @@ export class ShowIPDataView extends View {
         <p class="text-lg font-medium">${data.country}, ${data.city}</p>
       </div>
 
-      <div class="lg:px-12">
+      <div>
         <h3
           class="text-dark-gray text-[12px] uppercase font-medium tracking-wider"
         >
@@ -94,7 +94,7 @@ export class ShowIPDataView extends View {
         <p class="text-lg font-medium">${data.timezone.id} ${data.timezone.utc}</p>
       </div>
 
-      <div class="lg:px-12">
+      <div>
         <h3
           class="text-dark-gray text-[12px] uppercase font-medium tracking-wider"
         >
@@ -111,7 +111,7 @@ export class ShowMap extends View {
   _map = L.map('map');
   _myIcon = L.icon({
     iconUrl: markerIcon,
-    iconSize: [65, 65],
+    iconSize: [65, 55],
   });
 
   renderMap(position) {
