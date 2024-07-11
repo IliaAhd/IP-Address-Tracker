@@ -4,6 +4,8 @@ import 'leaflet/dist/leaflet.css';
 
 import markerIcon from '../images/icon-marker.png';
 
+import { MARKER_POS, MAP_ZOOM, MAP_TILE, COPYRIGHT } from './utils/config';
+
 class View {
   render(data) {
     this._data = data;
@@ -113,14 +115,21 @@ export class ShowMap extends View {
     iconUrl: markerIcon,
     iconSize: [65, 55],
   });
+  _marker = L.marker(MARKER_POS, { icon: this._myIcon });
+  _tileLayer = L.tileLayer(MAP_TILE, {
+    attribution: COPYRIGHT,
+  }).addTo(this._map);
 
   renderMap(position) {
-    this._map.setView(position, 13);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(this._map);
+    this._map.setView(position, MAP_ZOOM);
+    this._renderMarker(position);
+  }
 
-    L.marker(position, { icon: this._myIcon }).addTo(this._map).openPopup();
+  _renderMarker(position) {
+    this._marker.setLatLng(position).addTo(this._map);
+  }
+
+  _removeMarker() {
+    this._marker.remove();
   }
 }

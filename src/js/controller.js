@@ -29,7 +29,7 @@ const controlShowIPData = async query => {
     // console.log(model.state);
   } catch (error) {
     showIPDataView.renderError();
-    console.error(error);
+    // console.error(error);
   }
 };
 
