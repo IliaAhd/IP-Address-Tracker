@@ -27,6 +27,8 @@ export const getIPData = async url => {
       const IPData = await AJAX(`${url}${state.query.trim()}`);
       updateState(IPData);
     }
+    console.log(state);
+
   } catch (error) {
     throw error;
   }
