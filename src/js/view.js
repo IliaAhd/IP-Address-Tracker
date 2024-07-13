@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 
 import markerIcon from '../images/icon-marker.png';
 
-import { MARKER_POS, MAP_ZOOM, MAP_TILE, COPYRIGHT } from './utils/config';
+import { MARKER_POS, MAP_ZOOM, MAP_TILE, COPYRIGHT, MARKER_SIZE } from './utils/config';
 
 class View {
   render(data) {
@@ -75,7 +75,7 @@ export class ShowIPDataView extends View {
         >
           Ip address
         </h3>
-        <p class="text-lg font-medium">${data.ip}</p>
+        <p class="text-lg font-medium">${data.query}</p>
       </div>
 
       <div>
@@ -93,7 +93,7 @@ export class ShowIPDataView extends View {
         >
           Timezone
         </h3>
-        <p class="text-lg font-medium">${data.timezone.id} ${data.timezone.utc}</p>
+        <p class="text-lg font-medium">${data.timezone}</p>
       </div>
 
       <div>
@@ -102,7 +102,7 @@ export class ShowIPDataView extends View {
         >
           ISP
         </h3>
-        <p class="text-lg font-medium">${data.connection.isp}</p>
+        <p class="text-lg font-medium">${data.isp}</p>
       </div>
     `;
   }
@@ -113,7 +113,7 @@ export class ShowMap extends View {
   _map = L.map('map');
   _myIcon = L.icon({
     iconUrl: markerIcon,
-    iconSize: [65, 55],
+    iconSize: MARKER_SIZE,
   });
   _marker = L.marker(MARKER_POS, { icon: this._myIcon });
   _tileLayer = L.tileLayer(MAP_TILE, {

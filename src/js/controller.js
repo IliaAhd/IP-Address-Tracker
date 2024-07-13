@@ -24,15 +24,17 @@ const controlShowIPData = async query => {
     showIPDataView.render(model.state.IPData);
 
     // Render map
-    controlShowMap(model.state.IPData.latitude, model.state.IPData.longitude);
+    controlShowMap(model.state.IPData.lat, model.state.IPData.lon);
   } catch (error) {
     showIPDataView.renderError();
+    console.error(error);
   }
 };
 
 const controlShowMap = (lat, lon) => {
   const coords = [lat, lon];
 
+  // Show map based on coordinate
   showMap.renderMap(coords);
 };
 

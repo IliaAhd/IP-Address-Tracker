@@ -1,5 +1,7 @@
 # IP Tracker App
 
+https://ip-address-tracker-ai3.pages.dev
+
 Welcome to the IP Tracker App! This application allows users to track the geographical location of a given IP address. Built using vanilla JavaScript and styled with Tailwind CSS, it follows the Model-View-Controller (MVC) architecture to ensure clean and maintainable code.
 
 ## Features
@@ -82,7 +84,7 @@ Contributions are welcome! If you have any suggestions or improvements, please c
 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [IPfy API](https://api.ipify.org/?format=json/)
-- [IP who API](https://ipwho.is/)
+- [IP API](https://ip-api.com/)
 
 ## Contact
 

@@ -1,5 +1,6 @@
 import { AJAX, updateState } from './utils/helper';
 
+// Data Storage
 export const state = {
   IPData: {},
   userIP: {},
