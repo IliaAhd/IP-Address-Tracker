@@ -26,17 +26,17 @@ To run this project, you need a modern web browser and an internet connection.
 ### Installation
 
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/IliaAhd/IP-Address-Tracker.git
-    ```
+   ```sh
+   git clone https://github.com/IliaAhd/IP-Address-Tracker.git
+   ```
 2. Navigate to the project directory:
-    ```sh
-    cd IP-Address-Tracker
-    ```
+   ```sh
+   cd IP-Address-Tracker
+   ```
 3. Use `npm run dev` in your terminal:
-    ```sh
-    npm run dev
-    ```
+   ```sh
+   npm run dev
+   ```
 
 ### Usage
 
@@ -55,7 +55,7 @@ IP-Address-Tracker/
     ├── js/           # JavaScript files in MVC structure
     |   ├── model.js
     |   ├── view.js
-    |   └── controller.js           
+    |   └── controller.js
 ├── index.html        # Main HTML file
 └── README.md         # Project README file
 ```
@@ -83,8 +83,9 @@ Contributions are welcome! If you have any suggestions or improvements, please c
 ## Acknowledgements
 
 - [Tailwind CSS](https://tailwindcss.com/)
-- [IPfy API](https://api.ipify.org/?format=json/)
-- [IP API](https://ip-api.com/)
+- [Leaflet](https://leafletjs.com/)
+- [IPfy API](https://api.ipify.org)
+- [IP Geolocation](https://app.ipgeolocation.io/)
 
 ## Contact
 

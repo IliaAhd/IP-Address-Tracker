@@ -24,7 +24,7 @@ const controlShowIPData = async query => {
     showIPDataView.render(model.state.IPData);
 
     // Render map
-    controlShowMap(model.state.IPData.lat, model.state.IPData.lon);
+    controlShowMap(model.state.IPData.latitude, model.state.IPData.longitude);
   } catch (error) {
     showIPDataView.renderError();
     console.error(error);
