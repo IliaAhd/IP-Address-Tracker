@@ -70,17 +70,13 @@ The styling is done using Tailwind CSS. To customize the styles:
 
 The core logic is implemented following the MVC architecture:
 
-Model: Open `./src/js/model.js` to update the data fetching logic.
-View: Open `./src/js/view.js` to modify the presentation logic.
-Controller: Open `./src/js/controller.js` to update the application logic.
+- Model: Open `./src/js/model.js` to update the data fetching logic.
+- View: Open `./src/js/view.js` to modify the presentation logic.
+- Controller: Open `./src/js/controller.js` to update the application logic.
 
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or improvements, please create a pull request or submit an issue.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
